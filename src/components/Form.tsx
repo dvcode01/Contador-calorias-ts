@@ -73,7 +73,7 @@ function Form() {
       <input 
         type="submit" 
         className="bg-gray-800 hover:bg-gray-900 w-full p-2 font-bold text-white uppercase cursor-pointer disabled:opacity-10" 
-        value="Guardar comida o ejercicio" 
+        value={activity.category === 1 ? `Guardar Comida` : `Guardar Ejercicio`}
         disabled={!isValidActivity()}
       />
 
