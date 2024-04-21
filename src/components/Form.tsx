@@ -1,6 +1,6 @@
 import { categories } from "../data/categories"
 import { Activity } from "../types";
-import { useState, ChangeEvent } from "react"
+import { useState, ChangeEvent, FormEvent } from "react"
 
 function Form() {
   const [activity, setActivity] = useState<Activity>({
@@ -24,9 +24,15 @@ function Form() {
     return name.trim() !== '' && calories > 0;
   }
 
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log('submit...')
+  }
+
   return (
     <form 
       className="space-y-5 bg-white shadow p-10 rounded-lg"
+      onSubmit={handleSubmit}
     >
       <div className="grid grid-cols-1 gap-3">
         <label htmlFor="category" className="font-bold">Categorías:</label>
