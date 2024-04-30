@@ -1,6 +1,7 @@
 import { Activity } from "../types"
 
 export type ActivityActions = 
+    // Payload = parametros que le pasas al reducer
     {type: 'save-activity', payload: {newActivity: Activity}}
 
 type ActivityState = {
