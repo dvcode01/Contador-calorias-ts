@@ -29,7 +29,7 @@ function App() {
         </div>
       </section>
 
-      <section className="p-10 mx-10 max-w-4xl">
+      <section className="p-10 max-w-4xl m-auto">
         <ActivityList 
           activities={state?.activities}
           dispatch={dispatch}
