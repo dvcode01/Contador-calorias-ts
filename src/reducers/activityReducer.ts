@@ -12,8 +12,15 @@ export type ActivityState = {
 
 }
 
+// Comprueba si hy algo en localstorage
+const localStorageActivities = () : Activity[] => {
+    const activities = localStorage.getItem('activities');
+
+    return activities ? JSON.parse(activities) : [];
+}
+
 export const initialState : ActivityState = {
-    activities: [],
+    activities: localStorageActivities(),
     activeID: ''
 }
 
