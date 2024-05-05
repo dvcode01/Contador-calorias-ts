@@ -13,6 +13,8 @@ function CalorieTracker({activities} : CalorieTrackerProps) {
     
     const caloriesBurned = useMemo(() => activities.reduce((total, activity) => activity.category === 2 ? total + activity.calories : total, 0), [activities]);
 
+    const netCalories = useMemo(() => caloriesConsumed - caloriesBurned, [activities]);
+
 
     return (
         <>
@@ -27,6 +29,11 @@ function CalorieTracker({activities} : CalorieTrackerProps) {
                 <CaloriesDisplay 
                     calories={caloriesBurned}
                     text={'Quemadas'}
+                />
+
+                <CaloriesDisplay 
+                    calories={netCalories}
+                    text={'Diferencia'}
                 />
             </div>
             
